@@ -1,0 +1,131 @@
+version: '2.0'
+stories:
+  - story: order
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: order
+      - action: order_form
+      - active_loop: order_form
+  - story: good bye
+    steps:
+      - intent: good_bye
+      - checkpoint: greet_checkpoint
+        slot_was_set:
+          - context_scenario: holiday
+          - holiday_name: vòng tay
+      - action: utter_good_bye
+  - story: Are you a bot
+    steps:
+      - intent: bot_challenge
+      - action: utter_i_am_a_bot
+  - story: Greet with name
+    steps:
+      - intent: greet
+      - slot_was_set:
+          - customer_name: Nguyễn Thanh Bình
+      - action: action_greet_with_name
+  - story: Give time path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: give_time
+      - action: action_show_time
+  - story: Asking for general item (query)
+    steps:
+      - intent: ask_jewelry_general
+      - action: utter_ask_jewelry_category
+      - intent: inform
+        entities:
+          - jewelry_category: vòng đeo tay
+      - slot_was_set:
+          - jewelry_category: vòng đeo tay
+      - action: query_jewelry_by_type
+  - story: Buy jewery
+    steps:
+      - intent: buy_jewelry
+      - action: order_form
+      - action: action_order_jewelry
+      - action: utter_order_submit
+  - story: Ask general then detail
+    steps:
+      - intent: greet
+        entities:
+          - customer_name: Phan Hoàng Nam
+      - slot_was_set:
+          - customer_name: Phan Hoàng Nam
+      - action: utter_greet
+      - intent: ask_jewelry_general
+      - action: utter_ask_jewelry_category
+      - intent: inform
+        entities:
+          - jewelry_category: vòng đeo tay
+      - slot_was_set:
+          - jewelry_category: vòng đeo tay
+      - action: query_jewelry_by_type
+  - story: Ask and buy
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform
+        entities:
+          - customer_name: Nam
+          - jewelry_category: vòng tay
+      - slot_was_set:
+          - jewelry_category: vòng tay
+      - slot_was_set:
+          - customer_name: Nam
+      - action: query_jewelry_by_type
+      - intent: inform
+        entities:
+          - jewelry_category: Vòng tay
+      - slot_was_set:
+          - jewelry_category: Vòng tay
+      - action: query_jewelry_by_type
+      - intent: show_more_option
+      - action: query_jewelry_by_type
+      - intent: buy_jewelry
+      - action: order_form
+      - action: action_order_jewelry
+      - action: utter_order_submit
+  - story: Ask and buy 2
+    steps:
+      - intent: inform
+        entities:
+          - customer_name: Lợi
+          - jewelry_category: Vòng cổ
+      - slot_was_set:
+          - jewelry_category: Vòng cổ
+      - slot_was_set:
+          - customer_name: Lợi
+      - action: query_jewelry_by_type
+      - intent: inform
+        entities:
+          - jewelry_category: nhẫn
+      - slot_was_set:
+          - jewelry_category: nhẫn
+      - action: query_jewelry_by_type
+      - intent: inform
+        entities:
+          - jewelry_category: Nhẫn
+      - slot_was_set:
+          - jewelry_category: Nhẫn
+      - action: query_jewelry_by_type
+      - intent: buy_jewelry
+        entities:
+          - chosen_jewelry_name: Nhẫn kim cương vàng 18k
+      - slot_was_set:
+          - chosen_jewelry_name: Nhẫn kim cương vàng 18k
+      - action: order_form
+      - action: action_order_jewelry
+      - action: utter_order_submit
+  - story: interactive_story_1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform
+        entities:
+          - customer_name: Nam
+      - slot_was_set:
+          - customer_name: Nam
+      - action: action_greet_with_name

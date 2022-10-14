@@ -1,0 +1,95 @@
+version: '2.0'
+nlu:
+  - intent: greet
+    examples: |
+      - Xin chào
+      - chào bạn
+      - Buổi sáng tốt lành
+      - Dạo này sao rồi?
+      - Chào buổi chiều
+      - Chào buổi tối
+      - xin chòa
+      - xin chào
+      - hello
+      - alo
+      - xin chào buổi sáng
+      - exit
+      - Xin chòa, mình là [Phan Hoàng Nam](customer_name).
+  - intent: good_bye
+    examples: |
+      - Tạm biệt
+      - Hẹn gặp lại
+      - Cảm ơn nhiều
+      - Lúc khác gặp lại
+      - Gặp lại sau nha
+      - Lúc khác nói chuyện
+      - tạm biệt nhá.
+  - intent: bot_challenge
+    examples: |
+      - Bạn là ai?
+      - Bạn là con người phải không?
+      - Bot hả?
+      - Bạn tên gì?
+  - intent: give_time
+    examples: |
+      - Mấy giờ rồi?
+      - Hiện giờ
+      - Cho tui biết giờ
+      - Biết mấy giờ rồi không?
+      - Hiện thời gian
+      - cho biết thời gian
+      - mấy giờ rồi
+      - cho mình xin thời gian
+      - bạn cho mình hỏi mấy giờ rồi?
+  - intent: inform
+    examples: |
+      - Mình là [Phan Hoàng Nam](customer_name)
+      - Mình là [Phan Hoàng Trung](customer_name)
+      - Mình là [Phan Hoàng Bắc](customer_name)
+      - Anh tên là [Vinh Thiệu](customer_name)
+      - Mình muốn mua một cái [vòng cổ ](jewelry_category)
+      - Cho mình xem mấy món làm bằng [bạc](jewelry_material) [18k](jewelry_material_quality) đi.
+      - Mình muốn mua một cái [nhẫn](jewelry_category)
+      - Cần một cái [vòng đeo tay](jewelry_category) để tặng vợ nhân dịp sinh nhật
+      - Mọi người có cái [vòng cổ ](jewelry_category) nào không?
+      - Mình cần một cái [nhẫn](jewelry_category)
+      - Tên mình là [Phan Hoàng Nam](customer_name)
+      - Mình đang muốn mua một cái [nhẫn](jewelry_category) cho vợ
+      - Có mấy mẫu [vòng đeo tay](jewelry_category) nào đẹp thì cho chú xem.
+      - Mình là [Nam](customer_name). Hôm nay mình muốn mua một cái [vòng tay](jewelry_category)
+      - Cho mình xem mấy cái [Vòng tay](jewelry_category) đi.
+      - Anh tên [Lợi](customer_name). Anh đang muốn tìm mấy cái [Vòng cổ](jewelry_category) đẹp một chút. Em recommend anh mấy cái.
+      - [nhẫn](jewelry_category) thì sao?
+      - [Nhẫn](jewelry_category) thì thế nào?
+      - Cho mình mua 1 cái [vòng cổ](jewelry_category) đi.
+      - [Nhẫn](jewelry_category)
+      - Cho mình xem mấy mẫu [Nhẫn](jewelry_category) đi.
+      - Cho mình xem mấy mẫu Vòng cổ đi.
+      - Mình tên [Tiệp](customer_name)
+      - Mình tên là [Nam](customer_name).
+  - intent: ask_jewelry_general
+    examples: |
+      - Mọi người có mẫu trang sức nào đẹp không?
+      - Shop recommend giúp mình mấy món trang sức với
+      - Cho mình xem mấy mẫu trang sức đi.
+      - Bên cửa hàng có mẫu trang sức nào đẹp không?
+      - Cho chú xem mấy mẫu trang sức đi.
+      - Cho mình xem mấy món trang sức đi.
+      - Mình muốn mua trang sức.
+  - intent: buy_jewelry
+    examples: |
+      - Cho anh đặt hàng cái [vòng cổ  kim cương 18k](chosen_jewelry_name)  đi
+      - Ok. cho mình đặt mua cái đó.
+      - Cho anh mua món [Nhẫn kim cương vàng 18k](chosen_jewelry_name) đi.
+      - Mình muốn mua [Nhẫn kim cương vàng 18k](jewelry_category)
+      - Mình muốn mua [Nhẫn kim cương vàng 18k](chosen_jewelry_name).
+      - Cho mình mua [Nhẫn kim cương vàng 18k](chosen_jewelry_name) đi.
+  - intent: show_more_option
+    examples: |
+      - Cho mình xem cái khác đi.
+  - intent: out_of_scope
+    examples: |
+      - Mình muốn hỏi về đường đến công ty.
+      - Cho anh biết chỗ cửa hàng gần nhất của shop.
+      - Ai là thủ tướng nước Việt Nam.
+      - Nói câu gì vui nghe coi.
